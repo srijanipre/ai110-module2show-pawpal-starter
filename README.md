@@ -50,3 +50,19 @@ PawPal+ now includes several simple algorithms to improve task management:
 • Tasks can be filtered by completion status.
 • Recurring tasks automatically generate their next occurrence.
 • The scheduler detects basic conflicts when two tasks are scheduled at the same time.
+
+## Testing PawPal+
+
+The PawPal+ system includes an automated pytest suite to verify core functionality.
+Tests cover sorting tasks by time, filtering pending tasks, detecting scheduling conflicts, and verifying recurring task behavior.
+
+And you can run the tests locally by saying into your terminal:
+
+python -m pytest
+
+These tests confirm that the scheduler logic behaves correctly under normal conditions and common edge cases.
+
+### Confidence Level
+(4/5)
+
+The test suite covers the main scheduling algorithms and common edge cases such as empty task lists and conflicting task times. While the system appears reliable for basic scheduling, more complex time overlap logic could be added in the future.
