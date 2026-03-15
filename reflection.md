@@ -11,11 +11,13 @@
 2) A user should be able to schedule a care task such as feeding, walking, medication, or an appointment.
 3) A user should be able to view upcoming or current tasks for each pet.
 
+I structured the system around four main classes: Owner, Pet, Task, and Scheduler. The Owner class represents the user and keeps track of their pets. Each Pet stores basic information and a list of care tasks. The Task class represents things like feeding, walks, medication, or appointments. The Scheduler class manages the logic for organizing and retrieving tasks, and later will handle things like sorting and conflict detection. I chose this structure because it follows the real-world relationship where an owner has pets, pets have tasks, and the scheduler helps organize those tasks. 
+
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
-
+I didn’t make any major structural changes after reviewing the design with AI. However, during prompting the AI initially generated regular Python classes. After I clarified that I wanted to use Python dataclasses for objects like Task and Pet, the skeleton was updated to use dataclasses instead, which made the structure cleaner and more concise.
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
