@@ -1,8 +1,26 @@
 import streamlit as st
+from pawpal_system import Owner, Pet, Task
 
 st.set_page_config(page_title="PawPal+", page_icon="🐾", layout="centered")
 
+if "owner" not in st.session_state:
+    st.session_state.owner = Owner("Alex", "alex@email.com")
+
+owner = st.session_state.owner
+
 st.title("🐾 PawPal+")
+
+st.header("Add a Pet")
+
+new_pet_name = st.text_input("Pet Name")
+new_species = st.text_input("Species")
+new_age = st.number_input("Age", min_value=0)
+
+if st.button("Add Pet"):
+    if new_pet_name and new_species:
+        new_pet = Pet(new_pet_name, new_species, new_age)
+        owner.add_pet(new_pet)
+        st.success(f"{new_pet_name} added!")
 
 st.markdown(
     """
@@ -86,3 +104,8 @@ Suggested approach:
 4. Connect your scheduler here and display results.
 """
     )
+
+st.header("Your Pets")
+
+for pet in owner.pets:
+    st.write(f"{pet.name} ({pet.species}, age {pet.age})")

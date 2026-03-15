@@ -31,7 +31,7 @@ I didn’t make any major structural changes after reviewing the design with AI.
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
-
+My scheduler currently detects conflicts only when two tasks have the exact same scheduled time. It does not yet check for overlapping durations (for example, a 20-minute walk starting at 9:00 overlapping with a feeding at 9:10). I chose this simpler approach because it keeps the conflict detection algorithm easy to understand and sufficient for a basic scheduling demo.
 ---
 
 ## 3. AI Collaboration
