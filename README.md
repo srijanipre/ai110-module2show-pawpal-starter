@@ -66,3 +66,11 @@ These tests confirm that the scheduler logic behaves correctly under normal cond
 (4/5)
 
 The test suite covers the main scheduling algorithms and common edge cases such as empty task lists and conflicting task times. While the system appears reliable for basic scheduling, more complex time overlap logic could be added in the future.
+
+## Features
+
+- **Time-sorted scheduling** — tasks are ordered by their scheduled time to produce a clean daily plan
+- **Pending task filtering** — only incomplete tasks are shown, keeping the schedule focused
+- **Recurring task automation** — daily and weekly tasks automatically reschedule to their next due date when completed
+- **Conflict detection** — the scheduler flags any two tasks assigned to the same date and time
+- **Streamlit interface** — add pets and tasks, then generate and view your schedule in an interactive web app
